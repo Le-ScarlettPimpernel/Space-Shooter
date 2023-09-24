@@ -9,11 +9,12 @@ func _ready():
 
 func _physics_process(_delta):
 	move_and_slide()
-	position.x = wrap(position.x, 0, 1152)
-	position.y = wrap(position.y, 0, 648)
+	position.x = wrap(position.x, 0, Global.VP.x)
+	position.y = wrap(position.y, 0, Global.VP.y)
 
 
 func damage(d):
 	health -= d
 	if health <= 0:
+		Global.update_score(100)
 		queue_free()
