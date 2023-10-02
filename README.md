@@ -1,9 +1,11 @@
 # Space-Shooter
 Project 2 for MSCH-C220
 
-Description
+A basic space-shooter arcade game, created in Godot.
 
 ## Implementation
+Created using Godot 4.0.
+
 Assets are provided by Kenney.nl, provided under a CC0 1.0 Public Domain License.
 
 The explosion spritesheet was released into the public domain by StumpyStrust
