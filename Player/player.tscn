@@ -1,29 +1,111 @@
-[gd_scene load_steps=4 format=3 uid="uid://bai2sq16u3iwv"]
+[gd_scene load_steps=15 format=3 uid="uid://bai2sq16u3iwv"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_jni43"]
-[ext_resource type="Texture2D" uid="uid://d4f2xpl8swomc" path="res://Assets/Exhaust.png" id="2_6sgoj"]
+[ext_resource type="Texture2D" uid="uid://i24ci3lwlbd7" path="res://Assets/Boost.png" id="2_40j0g"]
 [ext_resource type="Texture2D" uid="uid://c140wjup1ma06" path="res://Assets/Ship.png" id="3_tsm5w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2h1mv"]
+atlas = ExtResource("2_40j0g")
+region = Rect2(0, 0, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_46k4l"]
+atlas = ExtResource("2_40j0g")
+region = Rect2(500, 0, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ekpw6"]
+atlas = ExtResource("2_40j0g")
+region = Rect2(1000, 0, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gjuh5"]
+atlas = ExtResource("2_40j0g")
+region = Rect2(1500, 0, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bwsy2"]
+atlas = ExtResource("2_40j0g")
+region = Rect2(2000, 0, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3fk3n"]
+atlas = ExtResource("2_40j0g")
+region = Rect2(0, 500, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6qcin"]
+atlas = ExtResource("2_40j0g")
+region = Rect2(500, 500, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c7t8k"]
+atlas = ExtResource("2_40j0g")
+region = Rect2(1000, 500, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8mj7d"]
+atlas = ExtResource("2_40j0g")
+region = Rect2(1500, 500, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_udiq0"]
+atlas = ExtResource("2_40j0g")
+region = Rect2(2000, 500, 500, 500)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b4fjs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2h1mv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_46k4l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ekpw6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gjuh5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bwsy2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3fk3n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6qcin")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c7t8k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8mj7d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_udiq0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_jni43")
 metadata/_edit_group_ = true
 
-[node name="Exhaust" type="Sprite2D" parent="."]
-visible = false
+[node name="Exhaust" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 50)
-texture = ExtResource("2_6sgoj")
+rotation = 3.14159
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_b4fjs")
+frame_progress = 0.581627
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, 4)
 texture = ExtResource("3_tsm5w")
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="."]
+visible = false
 position = Vector2(0, 4)
 polygon = PackedVector2Array(6, -40.1, 6, -37.3, 9.2, -30.1, 11.5, -32.4, 14, -31.3, 14, -30.1, 17, -28.1, 17, -24, 19.7, -7, 23, -3, 32.9, -3, 37.8, -12, 40.8, -12, 45, -7.8, 45, -4.5, 48, 0.400002, 48, 15, 46.2, 15, 41.2, 24, 37.8, 24, 33.9, 16.2, 25, 19.4, 25, 20.7, 20, 27, 17.7, 27, 17, 26.8, 17, 30.7, 12, 37, 7.8, 37, 0.799999, 24, -0.599998, 24, -4.6, 34, -6.3, 34, -10.8, 37.3, -13, 36.2, -13, 34.8, -17, 30.8, -17, 26.4, -21, 27.8, -21, 24.9, -29.7, 17, -33, 17, -38, 24, -40.8, 24, -44, 20.8, -44, 18.7, -48, 13.7, -48, 0.599998, -44.4, -9, -42.8, -9, -39.5, -12.4, -37, -11.3, -37, -9.6, -32.9, -3, -24, -3, -20, -6, -20, -10.2, -16.7, -29, -15.1, -29, -13.1, -32, -10.4, -32, -9.9, -31.7, -3, -41.5, -3, -43.2, -1, -44.3)
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+visible = false
 polygon = PackedVector2Array(0, -40, -8, -24, -16, -24, -24, 0, -32, 0, -40, -8, -48, 8, -40, 24, -24, 24, -16, 32, -8, 40, 0, 24, 8, 40, 16, 32, 24, 24, 40, 24, 48, 8, 40, -8, 32, 0, 24, 0, 16, -24, 8, -24)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
