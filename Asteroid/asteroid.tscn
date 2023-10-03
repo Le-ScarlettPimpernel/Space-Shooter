@@ -1,13 +1,17 @@
 [gd_scene load_steps=3 format=3 uid="uid://copm1ewtqbixb"]
 
 [ext_resource type="Script" path="res://Asteroid/Asteroid.gd" id="1_tgbhl"]
-[ext_resource type="Texture2D" uid="uid://d3s2g5ogov2ag" path="res://Assets/Meteor.png" id="2_j43ea"]
+[ext_resource type="Texture2D" uid="uid://ccoawkl4cm5ys" path="res://Assets/Mine.png" id="2_yj6gk"]
 
 [node name="Asteroid" type="CharacterBody2D"]
 script = ExtResource("1_tgbhl")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_j43ea")
+position = Vector2(0, 25)
+scale = Vector2(3, 3)
+texture = ExtResource("2_yj6gk")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(21, -17.3, 21, -14.3, 29.1, 4, 26.3, 4, 20.3, 18, 18.6, 18, 2.6, 28, -2.5, 28, -21, 17.1, -21, 14.3, -29.1, -4, -26.2, -4, -17.2, -21, -14.5, -21, -4, -26.2, -4, -29.2)
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="."]
+position = Vector2(0, 25)
+scale = Vector2(3, 3)
+polygon = PackedVector2Array(14.3, -9.9, 13.5, -7, 12, -7, 4, 4, -5, 4, -5, 1.8, -15.4, -9.6, -14.3, -12, -12.7, -12, -5, -18, -5, -19.2, -3, -20.3)
