@@ -91,6 +91,7 @@ position = Vector2(0, 50)
 rotation = 3.14159
 scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_b4fjs")
+autoplay = "default"
 frame_progress = 0.581627
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
